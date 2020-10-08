@@ -65,6 +65,10 @@ public class Magpie
         {
             response = "You should join a band.";
         }
+        else if (findWord(statement, "I want") >= 0) 
+        {
+            response = transformIWantStatement(statement);
+        }
         else
         {
             response = getRandomResponse();
@@ -146,10 +150,9 @@ public class Magpie
      * @param statement the user statement, assumed to contain "I want"
      * @return the transformed statement
      */
-    public String transformIWantStatement(String statement)
-    {
-        //your code here
-        return "";
+    public String transformIWantStatement(String statement) {
+        return ("Would you really be happy if you had" + statement.substring(findWord(statement, "I want") + 6) + "?");
+        
     }
 
     /**
