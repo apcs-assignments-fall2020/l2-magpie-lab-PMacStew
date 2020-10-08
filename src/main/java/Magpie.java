@@ -69,6 +69,10 @@ public class Magpie
         {
             response = transformIWantStatement(statement);
         }
+        else if (findWord(statement, "I") >= 0 && findWord(statement, "you") >= 0 + findWord(statement, "I"))
+        {
+            response = transformIYouStatement(statement);
+        }
         else
         {
             response = getRandomResponse();
@@ -163,8 +167,7 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
-        //your code here
-        return "";
+        return ("Why do you" + statement.substring(findWord(statement, "I") + 1, findWord(statement, "you")) + "me?");
     }
 
     /**
