@@ -165,8 +165,7 @@ public class Magpie
      * @param statement the user statement, assumed to contain "I" followed by "you"
      * @return the transformed statement
      */
-    public String transformIYouStatement(String statement)
-    {
+    public String transformIYouStatement(String statement) {
         return ("Why do you" + statement.substring(findWord(statement, "I") + 1, findWord(statement, "you")) + "me?");
     }
 
@@ -178,8 +177,7 @@ public class Magpie
      */
     public String transformIWantToStatement(String statement)
     {
-        // your code here
-        return "";
+        return ("What would it mean to" + statement.substring(findWord(statement, "I want to") + 9) + "?");
     }
 
 
@@ -193,7 +191,6 @@ public class Magpie
      */
     public String transformYouMeStatement(String statement)
     {
-        // your code here
-        return "";
+        return ("What makes you think that I" + statement.substring(findWord(statement, "you") + 3, findWord(statement, "me")) + "you?");
     }
 }
